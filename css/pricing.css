@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  background-image: url("../images/5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+
+.navbar {
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.navbar .nav-link {
+  font-size: 18px;
+  margin-left: 30px;
+  position: relative;
+  color: #000000;
+}
+.navbar .container .logo {
+  width: 150px;
+  height: 100px;
+}
+
+.navbar .navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 0%;
+  height: 2px;
+  background-color: #000000;
+  transition: all 0.6s ease;
+  transform-origin: center;
+}
+
+.navbar .nav-item:hover .nav-link::before {
+  width: 100%;
+}
+
+.navbar .navbar-toggle {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar .toggle-btn {
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+  z-index: 10;
+}
+
+.navbar #toggle-menu {
+  display: none;
+}
+
+.navbar .toggle-btn .bar {
+  width: 25px;
+  height: 3px;
+  margin: 7px 0 7px auto;
+  transition: all 0.2s ease-in-out;
+  background-color: #000000;
+}
+
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(2) {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.navbar #toggle-menu:checked + label.toggle-btn .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.dropdown-menu,
+.dropdown-submenu {
+  background-color: #222227;
+  color: #f9f06d;
+  border-radius: 10px;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 101%;
+  top: -7px;
+}
+
+.dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+}
+
+.dropdown-menu > li:focus > .dropdown-submenu {
+  display: block;
+}
+
+/* PricingTable */
+.pricingTable {
+  color: white;
+  background: white;
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  padding: 0 15px 25px;
+  border-radius: 30px 30px;
+  border-bottom: 10px solid var(--main-color);
+  position: relative;
+  margin: 50px auto 0;
+  z-index: 1;
+}
+.pricingTable .title {
+  background: var(--main-color);
+  font-size: 40px;
+  font-weight: 300;
+  padding: 15px 10px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: -40px 0 15px;
+}
+.pricingTable .price-value {
+  color: var(--main-color);
+}
+:root {
+  --main-color: #e2ad10;
+  --white: #fff;
+}
+.pricingTable .price-value .amount {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 45px;
+  margin-bottom: 5px;
+}
+.pricingTable .price-value .duration {
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+  text-transform: lowercase;
+}
+.pricingTable .pricing-content {
+  text-align: left;
+  padding: 20px;
+  margin: 0;
+  border-radius: 30px;
+  list-style: none;
+  display: inline-block;
+}
+.pricingTable .pricing-content li {
+  color: #888888;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  border-bottom: 1px solid #888888;
+  padding: 0 15px 0 40px;
+  margin: 0 0 15px;
+  position: relative;
+}
+.pricingTable .pricing-content li:last-child {
+  margin: 0;
+  border-bottom: none;
+}
+.pricingTable .pricing-content li:before {
+  content: "\f00c";
+  color: #349008;
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  position: absolute;
+  top: 1px;
+  left: 8px;
+}
+.pricingTable .pricing-content li.disable:before {
+  content: "\f00d";
+  color: #ff3a39;
+}
+.pricingTable .pricingTable-signup a {
+  color: var(--white);
+  background: var(--main-color);
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 6px 30px 5px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.pricingTable .pricingTable-signup a:hover {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+.pricingTable.pink {
+  --main-color: #f6295a;
+}
+.pricingTable.green {
+  --main-color: #137461;
+}
+@media only screen and (max-width: 990px) {
+  .pricingTable {
+    margin: 50px 0 80px;
+  }
+}
